@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Info</title>
+</head>
+<body>
+
+  <h1>Student Information</h1>
+  <p>Open the browser console to see the output.</p>
+
+  <script>
+    // Define the array of students
+    const students = [
+      { name: "Lameck", sex: "M", age: 21 },
+      { name: "loveness", sex: "F", age: 22 },
+      { name: "james", sex: "M", age: 19 },
+      { name: "Jazzy", sex: "M", age: 25 },
+      { name: "nespy", sex: "M", age: 22 },
+      { name: "Gumeni", sex: "M", age: 24 },
+      { name: "Yona", sex: "M", age: 22 }
+    ];
+
+    // 1. Display the first 3 students
+    console.log("First 3 students:");
+    for (let i = 0; i < 3; i++) {
+      console.log(students[i].name);
+    }
+
+    // 2. Display the name of the oldest student
+    let oldest = students[0];
+    for (let i = 1; i < students.length; i++) {
+      if (students[i].age > oldest.age) {
+        oldest = students[i];
+      }
+    }
+    console.log("Oldest student:", oldest.name);
+
+    // 3. Display the name of the youngest student
+    let youngest = students[0];
+    for (let i = 1; i < students.length; i++) {
+      if (students[i].age < youngest.age) {
+        youngest = students[i];
+      }
+    }
+    console.log("Youngest student:", youngest.name);
+
+    // 4. Add a new student dynamically at the end
+    students.push({ name: "Calvin", sex: "M", age: 29 });
+    console.log("Added new student:", students[students.length - 1].name);
+  </script>
+
+</body>
+</html>
